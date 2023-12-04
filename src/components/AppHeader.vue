@@ -1,4 +1,6 @@
 <script>
+import AppButton from './AppButton.vue';
+
 export default {
     props: {
         title: String,
@@ -20,13 +22,14 @@ export default {
                 }
             ],
             bgImgActive: 1,
-        }
+        };
     },
     methods: {
         getImagePath(imgName) {
             return new URL(`../assets/img/${imgName}.jpg`, import.meta.url).href;
         }
-    }
+    },
+    components: { AppButton }
 }
 </script>
 
@@ -50,47 +53,60 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="hero" :style="{'background-image': 'url(' + getImagePath(bgImg[bgImgActive].img) + ')'}">
-            <div class="container">
-                <nav>
-                    <h3>Logo</h3>
-                    <ul>
-                        <li v-for="link in headerNav"><a href="">{{ link }}</a></li>
-                        <li><a href=""><i class="fa-regular fa-user"></i></a></li>
-                        <li></li>
-                    </ul>
-                </nav>
-                <h1>{{ title }}</h1>
+        <div class="hero" :style="{ 'background-image': 'url(' + getImagePath(bgImg[bgImgActive].img) + ')' }">
+            <div class="over-img">
+
+
+                <div class="container">
+                    <nav>
+                        <h3>Logo</h3>
+                        <ul>
+                            <li v-for="link in headerNav"><a href="">{{ link }}</a></li>
+                            <li><a href=""><i class="fa-regular fa-user"></i></a></li>
+                            <li><AppButton text="get in touch" :isOutline="false"/></li>
+                        </ul>
+                    </nav>
+                    <h1>{{ title }}</h1>
+                </div>
             </div>
         </div>
-        
-    </header>
 
+    </header>
 </template>
 
 <style lang="scss" scoped>
 @use "../style/partials/mixins" as *;
 @use "../style/partials/_variables" as *;
+
 header {
     .header-info {
         color: $info_color;
         background-color: $header_bg_color;
         padding: 1rem 0;
+
         .row {
             @include flex(row, space-between, center);
-                ul {
-                    @include flex(row, space-between, center);
-                    gap: 1.5rem;
-                }
+
+            ul {
+                @include flex(row, space-between, center);
+                gap: 1.5rem;
+            }
         }
     }
 
     .hero {
         color: $white_color;
         height: $hero_heigth;
+        
+        .over-img {
+            background-color: rgba(0, 0, 0, 0.3);
+            height: 100%;
+        }
+
         nav {
             padding: 1.5rem 0;
             @include flex(row, space-between, center);
+
             ul {
                 @include flex(row, space-between, center);
                 gap: 2rem;
@@ -98,5 +114,4 @@ header {
             }
         }
     }
-}
-</style>
+}</style>
