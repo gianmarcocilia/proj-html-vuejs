@@ -1,18 +1,19 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
 import { store } from './store';
 
 export default {
-  data() {
-    return {
-      store,
-    }
-  }
+    data() {
+        return {
+            store,
+        };
+    },
+    components: { AppHeader }
 }
 </script>
 
 <template>
-<h1>New project</h1>
-<span><i class="fa-solid fa-check"></i></span>
+<AppHeader title="Financial Risk" :mail="store.mailContact" :phone="store.phoneContact"/>
 </template>
 
 <style lang="scss">
