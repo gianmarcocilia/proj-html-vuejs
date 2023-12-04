@@ -56,8 +56,6 @@ export default {
         </div>
         <div class="hero" :style="{ 'background-image': 'url(' + getImagePath(bgImg[bgImgActive].img) + ')' }">
             <div class="over-img">
-
-
                 <div class="container">
                     <nav>
                         <AppLogo />
@@ -67,7 +65,15 @@ export default {
                             <li><AppButton text="get in touch" :isOutline="false"/></li>
                         </ul>
                     </nav>
-                    <h1>{{ title }}</h1>
+                    <div class="content">
+                        <h1>{{ title }}</h1>
+                        <p>The rigth outcomes depend on continuous rigor in governance, models, and processes across the finance function.</p>
+                        <div>
+                            <AppButton text="get in touch" :isOutline="false"/>
+                            <AppButton text="read more" :isOutline="true"/>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -105,13 +111,32 @@ header {
         }
 
         nav {
-            padding: 1.5rem 0;
-            @include flex(row, space-between, center);
+            height: $header_nav;
+            @include flex(row, space-between, end);
 
             ul {
                 @include flex(row, space-between, center);
                 gap: 2rem;
                 text-transform: uppercase;
+            }
+        }
+        .content {
+            height: calc($hero_heigth - $header_nav);
+            text-align: center;
+            @include flex(column, center, center);
+            gap: 2rem;
+            h1 {
+                font-size: 80px;
+                font-weight: 900;
+            }
+            p {
+                color: $info_color;
+                font-size: 20px;
+                width: 60%;
+            }
+            div {
+                @include flex(row, space-between, center);
+                gap: 2rem;
             }
         }
     }
