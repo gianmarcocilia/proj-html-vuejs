@@ -1,5 +1,6 @@
 <script>
 import AppButton from './AppButton.vue';
+import AppLogo from './AppLogo.vue';
 
 export default {
     props: {
@@ -29,7 +30,7 @@ export default {
             return new URL(`../assets/img/${imgName}.jpg`, import.meta.url).href;
         }
     },
-    components: { AppButton }
+    components: { AppButton, AppLogo }
 }
 </script>
 
@@ -59,7 +60,7 @@ export default {
 
                 <div class="container">
                     <nav>
-                        <h3>Logo</h3>
+                        <AppLogo />
                         <ul>
                             <li v-for="link in headerNav"><a href="">{{ link }}</a></li>
                             <li><a href=""><i class="fa-regular fa-user"></i></a></li>
