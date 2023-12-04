@@ -104,6 +104,7 @@ header {
     .hero {
         color: $white_color;
         height: $hero_heigth;
+        position: relative;
         
         .over-img {
             background-color: rgba(0, 0, 0, 0.3);
