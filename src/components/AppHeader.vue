@@ -40,7 +40,7 @@ export default {
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p><i class="fa-solid fa-clock"></i> Open Hours: Mon - Sat - 9:00 - 18:00</p>
+                        <p class="m-0"><i class="fa-solid fa-clock"></i> Open Hours: Mon - Sat - 9:00 - 18:00</p>
                     </div>
                     <div class="col">
                         <ul>
@@ -59,21 +59,24 @@ export default {
                 <div class="container">
                     <nav>
                         <AppLogo />
-                        <ul>
+                        <ul class="m-0">
                             <li v-for="link in headerNav"><a href="">{{ link }}</a></li>
                             <li><a href=""><i class="fa-regular fa-user"></i></a></li>
-                            <li><AppButton text="get in touch" :isOutline="false"/></li>
+                            <li>
+                                <AppButton text="get in touch" :isOutline="false" />
+                            </li>
                         </ul>
                     </nav>
                     <div class="content">
                         <h1>{{ title }}</h1>
-                        <p>The rigth outcomes depend on continuous rigor in governance, models, and processes across the finance function.</p>
+                        <p>The rigth outcomes depend on continuous rigor in governance, models, and processes across the
+                            finance function.</p>
                         <div>
-                            <AppButton text="get in touch" :isOutline="false"/>
-                            <AppButton text="read more" :isOutline="true"/>
+                            <AppButton text="get in touch" :isOutline="false" />
+                            <AppButton text="read more" :isOutline="true" />
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -91,21 +94,19 @@ header {
         background-color: $header_bg_color;
         padding: 1rem 0;
 
-        .row {
+        ul {
             @include flex(row, space-between, center);
-
-            ul {
-                @include flex(row, space-between, center);
-                gap: 1.5rem;
-            }
+            gap: 1.5rem;
+            margin: 0;
         }
+
     }
 
     .hero {
         color: $white_color;
         height: $hero_heigth;
         position: relative;
-        
+
         .over-img {
             background-color: rgba(0, 0, 0, 0.3);
             height: 100%;
@@ -121,20 +122,24 @@ header {
                 text-transform: uppercase;
             }
         }
+
         .content {
             height: calc($hero_heigth - $header_nav);
             text-align: center;
             @include flex(column, center, center);
             gap: 2rem;
+
             h1 {
                 font-size: 80px;
                 font-weight: 900;
             }
+
             p {
                 color: $info_color;
                 font-size: 20px;
                 width: 60%;
             }
+
             div {
                 @include flex(row, space-between, center);
                 gap: 2rem;

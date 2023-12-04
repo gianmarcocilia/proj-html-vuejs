@@ -1,9 +1,5 @@
+@import 'bootstrap/scss/bootstrap.scss';
 // RESET
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family:Arial, Helvetica, sans-serif;
@@ -22,7 +18,5 @@ ul {
 }
 // COMMON
 .container {
-    width: 75%;
-    margin: 0 auto;
     max-width: 1200px;
 }

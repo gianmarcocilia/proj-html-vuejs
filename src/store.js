@@ -4,15 +4,15 @@ export const store = reactive({
     mailContact: 'hello@example.com',
     mainSection: [
         {
-            type: 'introduction video',
-            title: 'Advisory',
-            titleBg: 'Performance',
-            paragraph: 'Financial executives need to review their strategies, operating models and capabilities so that their areas can generate sound information for better decision making.'
+            type: '',
+            title: '',
+            titleBg: '',
+            paragraph: ''
         },
         {
-            type: 'what are we doing',
-            title: 'in Numbers',
-            titleBg: 'Results',
+            type: '',
+            title: '',
+            titleBg: '',
             paragraph: ''
         },
         {
