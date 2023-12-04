@@ -1,5 +1,6 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 import { store } from './store';
 
 export default {
@@ -8,12 +9,13 @@ export default {
             store,
         };
     },
-    components: { AppHeader }
+    components: { AppHeader, AppMain }
 }
 </script>
 
 <template>
 <AppHeader title="Financial Risk" :mail="store.mailContact" :phone="store.phoneContact"/>
+<AppMain />
 </template>
 
 <style lang="scss">
