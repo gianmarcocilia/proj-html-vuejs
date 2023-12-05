@@ -47,7 +47,7 @@ export default {
                     <li class="role">{{ elem.role }}</li>
                     <li>
                         <ul class="d-flex p-0 mt-2">
-                            <li class="me-3" v-for="icon in store.iconsContact"><a href=""><i :class="icon"
+                            <li class="me-3" v-for="icon in store.iconsSocial"><a href=""><i :class="icon"
                                         class="fa-circle"></i></a></li>
                         </ul>
                     </li>

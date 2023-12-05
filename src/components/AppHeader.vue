@@ -6,8 +6,8 @@ import { store } from '../store';
 export default {
     props: {
         title: String,
-        mail: String,
-        phone: String,
+        mail: Object,
+        phone: Object,
     },
     data() {
         return {
@@ -46,9 +46,9 @@ export default {
                     </div>
                     <div class="col">
                         <ul>
-                            <li>{{ phone }}</li>
-                            <li>{{ mail }}</li>
-                            <li v-for="icon in store.iconsContact"><a href=""><i :class="icon"></i></a></li>
+                            <li><i :class="phone.icon"></i> {{ phone.number }}</li>
+                            <li><i :class="mail.icon"></i> {{ mail.mail }}</li>
+                            <li v-for="icon in store.iconsSocial"><a href=""><i :class="icon"></i></a></li>
                         </ul>
                     </div>
                 </div>

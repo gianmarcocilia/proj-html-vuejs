@@ -6,6 +6,9 @@ import ServiceSection from './ServiceSection.vue';
 import TeamSection from './TeamSection.vue';
 import PresidentSpeech from './PresidentSpeech.vue';
 import NewsCard from './NewsCard.vue';
+import FormNewsletter from './FormNewsletter.vue';
+import MainForm from './MainForm.vue';
+import ExampleInc from './ExampleInc.vue';
 
 
 export default {
@@ -14,7 +17,7 @@ export default {
             store,
         };
     },
-    components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech, NewsCard }
+    components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech, NewsCard, FormNewsletter, MainForm, ExampleInc }
 }
 </script>
 
@@ -94,6 +97,37 @@ export default {
                 <NewsCard />
             </div>
         </section>
+
+        <!-- Section Form -->
+        <section class="section-form">
+            <div class="container">
+                <div class="section-top">
+                    <div class="text text-white w-100">
+                        <p class="name">newsletter</p>
+                        <h2><span>Know</span> First</h2>
+                        <p class="paragraph m-0">Follow closely and receive content about our company and the news of the current market.</p>
+                    </div>
+                    <FormNewsletter />
+                </div>
+            </div>  
+        </section>
+
+        <!-- Section Get in touch -->
+        <section class="section-get-in">
+            <div class="container">
+                <div class="row">
+                    <div class="section-top col-8">
+                        <p class="name">send a message</p>
+                        <h2>Get in <span>Touch</span></h2>
+                        <p class="paragraph">We will respond to your message as soon as possible.</p>
+                        <MainForm/>
+                    </div>
+                    <div class="col-4">
+                        <ExampleInc />
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -150,7 +184,28 @@ export default {
     }
 }
 
+.section-form {
+    background-color: #111117;
+    .section-top {
+        display: flex;
+        padding: 0 8rem;
+    }
+    .text {
+        .paragraph {
+            color: $info_color;
+        }
+    }
+}
 
+.section-get-in {
+    .section-top {
+        span {
+            color: $secondary_text_color;
+        }
+    }
+}
+
+// General style
 section {
     padding: 6rem 0;
 
@@ -170,7 +225,7 @@ section {
             padding-bottom: 2rem;
 
             span {
-                padding: .3em;
+                padding: .1em .2em;
                 background-color: $secondary_text_transparent;
                 border-radius: 5px;
             }
