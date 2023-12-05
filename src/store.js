@@ -2,37 +2,9 @@ import {reactive} from 'vue';
 export const store = reactive({
     phoneContact: '+1 (305) 1234-5678',
     mailContact: 'hello@example.com',
+    iconsContact: ['fa-brands fa-facebook-f', 'fa-brands fa-twitter', 'fa-brands fa-linkedin-in'],
     mainSection: [
-        {
-            type: '',
-            title: '',
-            titleBg: '',
-            paragraph: ''
-        },
-        {
-            type: '',
-            title: '',
-            titleBg: '',
-            paragraph: ''
-        },
-        {
-            type: '',
-            title: 'Excellence in',
-            titleBG: '',
-            paragraph: 'We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowned professionals. These sre some options that you can hire.'
-        },
-        {
-            type: 'we like what we do',
-            title: 'of Experts',
-            titleBg: 'Team',
-            paragraph: 'Ethics and integrity are the bases on wich our professionals build their careers. They are fundamentals that become daily attitudes.'
-        },
-        {
-            type: 'our editorial content',
-            title: 'Latest',
-            titleBg: 'News',
-            paragraph: 'Every week we publish content about what is best in the business world.'
-        },
+        
         {
             type: 'newsletter',
             title: 'First',

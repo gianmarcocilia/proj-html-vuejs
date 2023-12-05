@@ -1,64 +1,19 @@
 <script>
 import AppButton from './AppButton.vue';
+import { store } from '../store';
+import CounterSection from './CounterSection.vue';
+import ServiceSection from './ServiceSection.vue';
+import TeamSection from './TeamSection.vue';
+import PresidentSpeech from './PresidentSpeech.vue';
 
 
 export default {
     data() {
         return {
-            counters: [
-                {
-                    num: 128,
-                    thing: 'Certifications'
-                },
-                {
-                    num: 230,
-                    thing: 'Employees'
-                },
-                {
-                    num: 517,
-                    thing: 'Customers'
-                },
-                {
-                    num: 94,
-                    thing: 'Countries Served'
-                },
-            ],
-            services: [
-                {
-                    icon: 'fa-solid fa-network-wired',
-                    title: 'Audit & Assurance',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-briefcase',
-                    title: 'Financial Advisory',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-chart-simple',
-                    title: 'Analytics and M&A',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-plane',
-                    title: 'Middle Marketing',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-scale-balanced',
-                    title: 'Legal Consulting',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-inbox',
-                    title: 'Regulatory Risk',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-            ]
-
+            store,
         };
     },
-    components: { AppButton }
+    components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech }
 }
 </script>
 
@@ -84,12 +39,7 @@ export default {
                 <div class="section-top text-center text-white">
                     <p class="name">what are we doing</p>
                     <h2><span>Results</span> in Numbers</h2>
-                    <div class="section-bottom d-flex justify-content-center">
-                        <ul class="m-0 fw-bolder" v-for="counter in counters">
-                            <li class="fs-1">{{ counter.num }}</li>
-                            <li class="fs-3">{{ counter.thing }}</li>
-                        </ul>
-                    </div>
+                    <CounterSection />
                 </div>
             </div>
         </section>
@@ -108,19 +58,39 @@ export default {
                     </div>
                     <AppButton text="see all" :isOutline="true" />
                 </div>
-                <div class="section-bottom pt-5">
-                    <div class="container">
-                        <div class="row g-5">
-                            <div class="col-4" v-for="service in services">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i :class="service.icon"></i></h3>
-                                    <h2>{{service.title}}</h2>
-                                    <p>{{ service.paragraph }}</p>
-                                </div>
-                            </div>
-                        </div>
+                <ServiceSection />
+            </div>
+        </section>
+
+        <!-- Section Team -->
+        <section class="section-team">
+            <div class="container d-flex">
+                <div class="row">
+                    <div class="section-top col-8">
+                        <p class="name">we like what we do</p>
+                        <h2><span>Team</span> of Experts</h2>
+                        <p class="paragraph">Ethics and integrity are the bases on wich our professionals build their
+                            careers.
+                            They are fundamentals that become daily attitudes.</p>
+                        <TeamSection />
                     </div>
+                    <PresidentSpeech />
                 </div>
+            </div>
+        </section>
+
+        <!-- Section News -->
+        <section class="section-news">
+            <div class="container">
+                <div class="section-top text-white d-flex align-items-end justify-content-between">
+                    <div class="text w-75">
+                        <p class="name">our editorial content</p>
+                        <h2>Latest <span>News</span></h2>
+                        <p class="paragraph m-0">Every week we publish content about what is best in the business world.</p>
+                    </div>
+                    <AppButton text="see all" :isOutline="false" />
+                </div>
+                
             </div>
         </section>
     </main>
@@ -133,7 +103,6 @@ export default {
 .section-video {
     h2 {
         color: $primary_text_color;
-
         span {
             color: $secondary_text_color;
         }
@@ -147,46 +116,38 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: saturation;
-
-    .section-bottom {
-        padding-top: 3rem;
-
-        li:first-child {
-            color: $secondary_text_color;
-        }
-    }
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .section-service {
     background-color: $main_bg_color;
     text-align: left;
 
-    .section-bottom {
-        h3 {
-            color: $secondary_text_color;
-            font-size: 50px;
-        }
-
-        p {
+    .section-top {
+        .paragraph {
             color: $info_color;
         }
-
-        .card {
-            position: relative;
-
-            &::after {
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                content: '\f061';
-                position: absolute;
-                right: 10%;
-                font-size: 30px;
-                color: $secondary_text_color;
-            }
-        }
-
     }
 }
+
+.section-team {
+    width: 100%;
+    flex-wrap: wrap;
+
+    span {
+        color: $secondary_text_color;
+    }
+}
+
+.section-news {
+    h2 {
+        color: $primary_text_color;
+        span {
+            color: $secondary_text_color;
+        }
+    }
+}
+
 
 section {
     padding: 6rem 0;
@@ -196,25 +157,25 @@ section {
         .name {
             color: $secondary_text_color;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 1rem;
             font-weight: 700;
             padding-bottom: 2rem;
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 3rem;
             font-weight: 900;
             padding-bottom: 2rem;
 
             span {
                 padding: .3em;
-                background-color: #00a6a61e;
+                background-color: $secondary_text_transparent;
                 border-radius: 5px;
             }
         }
 
         .paragraph {
-            color: $info_color;
+            color: $info_main_color;
         }
     }
 
@@ -222,5 +183,4 @@ section {
         border-radius: 5px;
         display: block;
     }
-}
-</style>
+}</style>

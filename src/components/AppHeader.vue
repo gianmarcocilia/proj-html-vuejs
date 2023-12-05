@@ -1,6 +1,7 @@
 <script>
 import AppButton from './AppButton.vue';
 import AppLogo from './AppLogo.vue';
+import { store } from '../store';
 
 export default {
     props: {
@@ -10,6 +11,7 @@ export default {
     },
     data() {
         return {
+            store,
             headerNav: ['home', 'about', 'services', 'team', 'blog'],
             bgImg: [
                 {
@@ -46,9 +48,7 @@ export default {
                         <ul>
                             <li>{{ phone }}</li>
                             <li>{{ mail }}</li>
-                            <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li v-for="icon in store.iconsContact"><a href=""><i :class="icon"></i></a></li>
                         </ul>
                     </div>
                 </div>
