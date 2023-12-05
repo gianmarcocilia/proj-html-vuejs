@@ -25,6 +25,7 @@ a {
     padding: 1rem 1.5rem;
     font-size: inherit;
     font-weight: inherit;
+    width: fit-content;
 
     &.outline {
         background-color: transparent;

@@ -1,0 +1,88 @@
+<script>
+import AppLogo from './AppLogo.vue';
+import AppButton from './AppButton.vue';
+import { store } from '../store';
+
+export default {
+    props: {
+        phone: Object,
+        mail: Object,
+        address: Object,
+    },
+    data() {
+        return {
+            store,
+            about: ['The Company', 'Institutional', 'Social & Events', 'Innovation', 'Environment', 'Technology'],
+            support: ['Responsibility', 'Terms of Use', 'About Cookies', 'Privacy Policy', 'Accessibility', 'Information'],
+        };
+    },
+    components: {AppLogo, AppButton}
+}
+</script>
+
+<template>
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row row-cols-4">
+                    <div class="col">
+                        <AppLogo />
+                        <p class="py-4 m-0">A functional HTML Template for Corporate & Business.</p>
+                        <ul class="p-0">
+                            <li><i :class="phone.icon"></i>{{ phone.number }}</li>
+                            <li><i :class="mail.icon"></i>{{ mail.mail }}</li>
+                            <li><i :class="address.icon"></i>{{ address.address }}</li>
+                        </ul>
+                        <AppButton :isOutline="true" text="get in touch"/>
+                    </div>
+                    <div class="col">
+                        <div class="my-card">
+                            <h3>About</h3>
+                            <ul>
+                                <li v-for="item in about"><i class="fa-solid fa-chevron-right"></i> {{ item }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-card">
+                            <h3>Services</h3>
+                            <ul>
+                                <li v-for="item in store.services"><i class="fa-solid fa-chevron-right"></i> {{ item.title }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-card">
+                            <h3>Support</h3>
+                            <ul>
+                                <li v-for="item in support"><i class="fa-solid fa-chevron-right"></i> {{ item }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+</template>
+
+<style lang="scss" scoped>
+@use "../style/partials/variables" as *;
+
+.footer-top {
+    background-image: url(../assets/img/bg-7.jpg);
+    padding: 8rem 0;
+    color: $info_color;
+
+    ul {
+        padding: 0;
+    }
+    li {
+        padding-bottom: 1em;
+        i {
+            margin-right: .5em;
+        }
+    }
+}
+
+</style>

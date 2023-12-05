@@ -63,7 +63,6 @@ i {
     }
 
 .button {
-    width: fit-content;
     color: $secondary_text_color;
 }
 </style>

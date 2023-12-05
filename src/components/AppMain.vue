@@ -62,7 +62,7 @@ export default {
                     </div>
                     <AppButton text="see all" :isOutline="true" />
                 </div>
-                <ServiceSection />
+                <ServiceSection :services="store.services"/>
             </div>
         </section>
 

@@ -51,7 +51,6 @@ label {
 }
 
 .button {
-    width: fit-content;
     color: white;
 }
 

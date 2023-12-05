@@ -1,39 +1,11 @@
 <script>
 export default {
+    props: {
+        services: Array,
+    },
     data() {
         return {
-            services: [
-                {
-                    icon: 'fa-solid fa-network-wired',
-                    title: 'Audit & Assurance',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-briefcase',
-                    title: 'Financial Advisory',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-chart-simple',
-                    title: 'Analytics and M&A',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-plane',
-                    title: 'Middle Marketing',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-scale-balanced',
-                    title: 'Legal Consulting',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-                {
-                    icon: 'fa-solid fa-inbox',
-                    title: 'Regulatory Risk',
-                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
-                },
-            ],
+            
         }
     }
 }
