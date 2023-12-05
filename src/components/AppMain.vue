@@ -23,6 +23,38 @@ export default {
                     thing: 'Countries Served'
                 },
             ],
+            services: [
+                {
+                    icon: 'fa-solid fa-network-wired',
+                    title: 'Audit & Assurance',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+                {
+                    icon: 'fa-solid fa-briefcase',
+                    title: 'Financial Advisory',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+                {
+                    icon: 'fa-solid fa-chart-simple',
+                    title: 'Analytics and M&A',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+                {
+                    icon: 'fa-solid fa-plane',
+                    title: 'Middle Marketing',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+                {
+                    icon: 'fa-solid fa-scale-balanced',
+                    title: 'Legal Consulting',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+                {
+                    icon: 'fa-solid fa-inbox',
+                    title: 'Regulatory Risk',
+                    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet.'
+                },
+            ]
 
         };
     },
@@ -79,61 +111,13 @@ export default {
                 <div class="section-bottom pt-5">
                     <div class="container">
                         <div class="row g-5">
-                            <div class="col-4">
+                            <div class="col-4" v-for="service in services">
                                 <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-network-wired"></i></h3>
-                                    <h2>Audit & Assurance</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
+                                    <h3><i :class="service.icon"></i></h3>
+                                    <h2>{{service.title}}</h2>
+                                    <p>{{ service.paragraph }}</p>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-briefcase"></i></h3>
-                                    <h2>Financial Advisory</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-chart-simple"></i></h3>
-                                    <h2>Analytics and M&A</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-plane"></i></h3>
-                                    <h2>Middle Marketing</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-scale-balanced"></i></h3>
-                                    <h2>Legal Consulting</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card bg-dark text-white p-5">
-                                    <h3><i class="fa-solid fa-inbox"></i></h3>
-                                    <h2>Regulatory Risk</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod inventore ex amet
-                                        placeat, porro aspernatur quibusdam? Ratione, modi nihil fugiat saepe iusto quaerat
-                                        possimus odio tempore. Maiores vitae dolorum mollitia!</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>

@@ -16,9 +16,9 @@ export const store = reactive({
             paragraph: ''
         },
         {
-            type: 'our business areas',
+            type: '',
             title: 'Excellence in',
-            titleBG: 'Services',
+            titleBG: '',
             paragraph: 'We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowned professionals. These sre some options that you can hire.'
         },
         {
