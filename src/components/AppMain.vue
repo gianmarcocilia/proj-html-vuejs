@@ -5,6 +5,7 @@ import CounterSection from './CounterSection.vue';
 import ServiceSection from './ServiceSection.vue';
 import TeamSection from './TeamSection.vue';
 import PresidentSpeech from './PresidentSpeech.vue';
+import NewsCard from './NewsCard.vue';
 
 
 export default {
@@ -13,7 +14,7 @@ export default {
             store,
         };
     },
-    components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech }
+    components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech, NewsCard }
 }
 </script>
 
@@ -90,7 +91,7 @@ export default {
                     </div>
                     <AppButton text="see all" :isOutline="false" />
                 </div>
-                
+                <NewsCard />
             </div>
         </section>
     </main>
@@ -140,6 +141,7 @@ export default {
 }
 
 .section-news {
+    background-color: $news_bg_color;
     h2 {
         color: $primary_text_color;
         span {
