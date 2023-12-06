@@ -55,7 +55,7 @@ export default {
         </section>
 
         <!-- Section Counter -->
-        <section class="section-counter">
+        <section id="about" class="section-counter">
             <div class="container">
                 <div class="section-top text-center text-white">
                     <p class="name">what are we doing</p>
@@ -66,7 +66,7 @@ export default {
         </section>
 
         <!-- Section service -->
-        <section class="section-service">
+        <section id="services" class="section-service">
             <div class="container">
                 <div class="section-top text-white d-flex align-items-end justify-content-between">
                     <div class="text w-75">
@@ -84,7 +84,7 @@ export default {
         </section>
 
         <!-- Section Team -->
-        <section class="section-team">
+        <section id="team" class="section-team">
             <div class="container d-flex">
                 <div class="row">
                     <div class="section-top col-8">
@@ -101,7 +101,7 @@ export default {
         </section>
 
         <!-- Section News -->
-        <section class="section-news">
+        <section id="blog" class="section-news">
             <div class="container">
                 <div class="section-top text-white d-flex align-items-end justify-content-between">
                     <div class="text w-75">
@@ -130,7 +130,7 @@ export default {
         </section>
 
         <!-- Section Get in touch -->
-        <section class="section-get-in">
+        <section id="get-in" class="section-get-in">
             <div class="container">
                 <div class="row">
                     <div class="section-top col-8">

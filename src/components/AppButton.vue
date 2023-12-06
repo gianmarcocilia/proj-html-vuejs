@@ -3,20 +3,15 @@ export default {
     emits: ['buttonClicked'],
     props: {
         text: String,
-        isOutline: Boolean
+        isOutline: Boolean,
+        link: String
     },
-    methods: {
-        clicked(event) {
-            event.preventDefault();
-            this.$emit('buttonClicked');
-        }
-    }
 }
 </script>
 
 <template>
 
-<a @click="clicked" :class="isOutline ? 'outline' : ''" href="">{{ text }}</a>
+<a @click="$emit('buttonClicked')" :class="isOutline ? 'outline' : ''" :href="`#${link}`">{{ text }}</a>
 </template>
 
 <style lang="scss" scoped>

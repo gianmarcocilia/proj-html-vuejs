@@ -81,10 +81,10 @@ export default {
                     <nav>
                         <AppLogo />
                         <ul class="m-0">
-                            <li v-for="link in headerNav"><a href="">{{ link }}</a></li>
+                            <li v-for="link in headerNav"><a :href="`#${link}`">{{ link }}</a></li>
                             <li><a href=""><i class="fa-regular fa-user"></i></a></li>
                             <li>
-                                <AppButton text="get in touch" :isOutline="false" />
+                                <AppButton text="get in touch" :isOutline="false" link="get-in"/>
                             </li>
                         </ul>
                     </nav>
@@ -93,7 +93,7 @@ export default {
                         <p>The rigth outcomes depend on continuous rigor in governance, models, and processes across the
                             finance function.</p>
                         <div>
-                            <AppButton text="get in touch" :isOutline="false" />
+                            <AppButton text="get in touch" :isOutline="false" link="get-in"/>
                             <AppButton text="read more" :isOutline="true" />
                         </div>
                     </div>

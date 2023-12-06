@@ -33,7 +33,7 @@ export default {
                             <li><i :class="mail.icon"></i> {{ mail.mail }}</li>
                             <li><i :class="address.icon"></i> {{ address.address }}</li>
                         </ul>
-                        <AppButton :isOutline="true" text="get in touch" />
+                        <AppButton :isOutline="true" text="get in touch" link="get-in"/>
                     </div>
                     <div class="col">
                         <div class="my-card">
@@ -72,7 +72,7 @@ export default {
                         <p>Enjoy the low price. We are tracking any intention of piracy.</p>
                     </div>
                     <div class="col">
-                        <p>© 2020 NEXGEN is Proudly Powered by <span>Codings</span>.</p>
+                        <p>© 2020 NEXGEN is Proudly Powered by <a href="">Codings</a>.</p>
                     </div>
                 </div>
             </div>
@@ -125,8 +125,11 @@ export default {
     color: $info_color;
     p {
         margin: 0;
-        span {
+        a {
             color: $secondary_text_color;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
