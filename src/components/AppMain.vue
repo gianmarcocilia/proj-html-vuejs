@@ -15,7 +15,20 @@ export default {
     data() {
         return {
             store,
+            showCardNewsControl: 2,
+            cardNewsButtonText: 'See All',
         };
+    },
+    methods: {
+        showAllNews() {
+            if (this.showCardNewsControl == 2) {
+                this.showCardNewsControl = store.cardsNews.length;
+                this.cardNewsButtonText = 'Show Less';
+            } else if (this.showCardNewsControl == store.cardsNews.length) {
+                this.showCardNewsControl = 2;
+                this.cardNewsButtonText = 'See All';
+            }
+        }
     },
     components: { AppButton, CounterSection, ServiceSection, TeamSection, PresidentSpeech, NewsCard, FormNewsletter, MainForm, ExampleInc }
 }
@@ -92,9 +105,9 @@ export default {
                         <h2>Latest <span>News</span></h2>
                         <p class="paragraph m-0">Every week we publish content about what is best in the business world.</p>
                     </div>
-                    <AppButton text="see all" :isOutline="false" />
+                    <AppButton :text="cardNewsButtonText" :isOutline="false" @buttonClicked="showAllNews"/>
                 </div>
-                <NewsCard />
+                <NewsCard :cardControlShow="showCardNewsControl"/>
             </div>
         </section>
 

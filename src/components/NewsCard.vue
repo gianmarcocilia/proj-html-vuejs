@@ -1,45 +1,28 @@
 <script>
+import { store } from '../store';
 export default {
+    props: {
+            cardControlShow: Number,
+        },
     data() {
         return {
-            cards: [
-                {
-                    image: 'news-1',
-                    title: 'Increasing creativity is possible for everyone',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    person: 'Andrea Miller',
-                    hour: '2 Days Ago'
-                },
-                {
-                    image: 'news-2',
-                    title: 'Because market research is part of the business plan',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    person: 'John Layer',
-                    hour: '2 Days Ago'
-                },
-                {
-                    image: 'news-3',
-                    title: 'Working from home is now a trend',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    person: 'Lucy May',
-                    hour: '2 Days Ago'
-                }
-            ]
+            store,
         }
     },
     methods: {
         getImagePath(imgName) {
             return new URL(`../assets/img/${imgName}.jpg`, import.meta.url).href;
-        }
-    }
+        },
+    },
+    
 }
 </script>
 
 <template>
     <div class="container pt-5">
-        <div class="row row-cols-3">
-            <div class="col" v-for="(card, index) in cards" :key="index">
-                <div class="my-card" :style="{ 'background-image': 'url(' + getImagePath(card.image) + ')' }">
+        <div class="row row-cols-3 gy-4">
+            <div class="col" v-for="(card, index) in store.cardsNews" :key="index">
+                <div class="my-card" :style="{ 'background-image': 'url(' + getImagePath(card.image) + ')' }" v-show="index <= cardControlShow">
                     <div class="effects">
                         <div class="details">
                             <span><i class="fa-regular fa-user"></i> {{ card.person }}</span>
