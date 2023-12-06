@@ -65,6 +65,18 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center justify-content-between text-center">
+                    <div class="col">
+                        <p>Enjoy the low price. We are tracking any intention of piracy.</p>
+                    </div>
+                    <div class="col">
+                        <p>© 2020 NEXGEN is Proudly Powered by <span>Codings</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -106,4 +118,16 @@ export default {
         margin-right: .5em;
     }
 
-}</style>
+}
+.footer-bottom {
+    background-color: black;
+    padding: 1.5rem;
+    color: $info_color;
+    p {
+        margin: 0;
+        span {
+            color: $secondary_text_color;
+        }
+    }
+}
+</style>
