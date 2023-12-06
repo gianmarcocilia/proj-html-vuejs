@@ -19,6 +19,7 @@ h3 {
     font-weight: 700;
     font-size: 20px;
     span {
+        display: inline-block;
         color: #059c9c;
         background-color: #05838328;
         padding: .8rem 0 .8rem 2rem;

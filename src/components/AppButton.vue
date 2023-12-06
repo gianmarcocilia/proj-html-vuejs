@@ -22,7 +22,7 @@ a {
     display: block;
     border: none;
     border-radius: 5px;
-    padding: 1rem 1.5rem;
+    padding: .5rem 1.5rem;
     font-size: inherit;
     font-weight: inherit;
     width: fit-content;

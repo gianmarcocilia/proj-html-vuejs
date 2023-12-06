@@ -12,6 +12,9 @@ img {
 a {
     color: inherit;
     text-decoration: none;
+    &:hover {
+        color: white;
+    }
 }
 ul {
     list-style: none;

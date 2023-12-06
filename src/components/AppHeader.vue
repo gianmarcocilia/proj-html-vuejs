@@ -114,7 +114,7 @@ header {
 
         nav {
             height: $header_nav;
-            @include flex(row, space-between, end);
+            @include flex(row, space-between, center);
 
             ul {
                 @include flex(row, space-between, center);

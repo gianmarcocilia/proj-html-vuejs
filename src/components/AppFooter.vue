@@ -16,7 +16,7 @@ export default {
             support: ['Responsibility', 'Terms of Use', 'About Cookies', 'Privacy Policy', 'Accessibility', 'Information'],
         };
     },
-    components: {AppLogo, AppButton}
+    components: { AppLogo, AppButton }
 }
 </script>
 
@@ -28,18 +28,19 @@ export default {
                     <div class="col">
                         <AppLogo />
                         <p class="py-4 m-0">A functional HTML Template for Corporate & Business.</p>
-                        <ul class="p-0">
-                            <li><i :class="phone.icon"></i>{{ phone.number }}</li>
-                            <li><i :class="mail.icon"></i>{{ mail.mail }}</li>
-                            <li><i :class="address.icon"></i>{{ address.address }}</li>
+                        <ul class="p-0 contact">
+                            <li><i :class="phone.icon"></i> {{ phone.number }}</li>
+                            <li><i :class="mail.icon"></i> {{ mail.mail }}</li>
+                            <li><i :class="address.icon"></i> {{ address.address }}</li>
                         </ul>
-                        <AppButton :isOutline="true" text="get in touch"/>
+                        <AppButton :isOutline="true" text="get in touch" />
                     </div>
                     <div class="col">
                         <div class="my-card">
                             <h3>About</h3>
                             <ul>
-                                <li v-for="item in about"><i class="fa-solid fa-chevron-right"></i> {{ item }}</li>
+                                <li v-for="item in about"><i class="fa-solid fa-chevron-right"></i> <a href="">{{ item
+                                }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,7 +48,8 @@ export default {
                         <div class="my-card">
                             <h3>Services</h3>
                             <ul>
-                                <li v-for="item in store.services"><i class="fa-solid fa-chevron-right"></i> {{ item.title }}</li>
+                                <li v-for="item in store.services"><i class="fa-solid fa-chevron-right"></i> <a href="">{{
+                                    item.title }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -55,7 +57,8 @@ export default {
                         <div class="my-card">
                             <h3>Support</h3>
                             <ul>
-                                <li v-for="item in support"><i class="fa-solid fa-chevron-right"></i> {{ item }}</li>
+                                <li v-for="item in support"><i class="fa-solid fa-chevron-right"></i> <a href="">{{ item
+                                }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -63,7 +66,6 @@ export default {
             </div>
         </div>
     </footer>
-   
 </template>
 
 <style lang="scss" scoped>
@@ -74,15 +76,34 @@ export default {
     padding: 8rem 0;
     color: $info_color;
 
-    ul {
-        padding: 0;
-    }
-    li {
-        padding-bottom: 1em;
-        i {
-            margin-right: .5em;
+    .contact {
+        li {
+            padding: .6em;
         }
     }
-}
 
-</style>
+    .my-card {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 2.5rem;
+
+        h3 {
+            font-weight: 700;
+            padding-bottom: .5em;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                padding-bottom: .6em;
+            }
+        }
+
+    }
+
+    i {
+        margin-right: .5em;
+    }
+
+}</style>
