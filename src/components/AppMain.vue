@@ -46,7 +46,11 @@ export default {
                         models and
                         capabilities so that their areas can generate sound information for better decision making.</p>
                 </div>
-                <img class="w-75 m-auto" src="../assets/img/video-1.jpg" alt="">
+                <div class="video">
+                    <img class="w-75 m-auto" src="../assets/img/video-1.jpg" alt="">
+                    <span class="first"><i class="fa-solid fa-play"></i></span>
+                    <span class="second"><i class="fa-solid fa-play"></i></span>
+                </div>
             </div>
         </section>
 
@@ -153,6 +157,27 @@ export default {
         color: $primary_text_color;
         span {
             color: $secondary_text_color;
+        }
+    }
+    .video {
+        position: relative;
+        filter: saturate(500%) grayscale(30%);
+        .first {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 90px;
+            color: rgba(255, 255, 255, 0.7);
+            
+        }
+        .second {
+            position: absolute;
+            left: 50%;
+            top: 48%;
+            transform: translate(-50%, -50%);
+            font-size: 90px;
+            color: rgba(255, 255, 255, 0.3);
         }
     }
 }

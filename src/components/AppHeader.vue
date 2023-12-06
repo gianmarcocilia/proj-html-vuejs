@@ -24,13 +24,33 @@ export default {
                     img: 'bg-3'
                 }
             ],
-            bgImgActive: 1,
+            bgImgActive: 0,
+            myInterval: null
         };
     },
     methods: {
         getImagePath(imgName) {
             return new URL(`../assets/img/${imgName}.jpg`, import.meta.url).href;
+        },
+        changeHeroImg() {
+            if (this.bgImgActive < this.bgImg.length - 1) {
+                this.bgImgActive++
+            } else {
+                this.bgImgActive = 0
+            }
+        },
+        clickedHeroImg(index) {
+            clearInterval(this.myInterval);
+            this.bgImgActive = index;
+            this.myInterval = setInterval(() => {
+            this.changeHeroImg()
+        }, 5000) 
         }
+    },
+    mounted() {
+        this.myInterval = setInterval(() => {
+            this.changeHeroImg()
+        }, 5000)
     },
     components: { AppButton, AppLogo }
 }
@@ -78,6 +98,9 @@ export default {
                     </div>
 
                 </div>
+            </div>
+            <div class="img-bg">
+                <div @click="clickedHeroImg(index)" class="active-bg" v-for="(num, index) in bgImg" :key="num" :class="index == bgImgActive ? ' bg-color' : ''"></div>
             </div>
         </div>
 
@@ -143,6 +166,26 @@ header {
             div {
                 @include flex(row, space-between, center);
                 gap: 2rem;
+            }
+        }
+
+        .img-bg {
+            position: absolute;
+            top: 50%;
+            left: 98%;
+            transform: translateY(-50%);
+
+            .active-bg {
+                height: 40px;
+                width: 10px;
+                border: 1px solid $secondary_text_color;
+                border-radius: 5px;
+                margin: 5px 0;
+                cursor: pointer;
+            }
+
+            .bg-color {
+                background-color: $secondary_text_color;
             }
         }
     }
