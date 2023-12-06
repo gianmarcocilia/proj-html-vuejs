@@ -14,14 +14,14 @@ export default {
                     image: 'news-2',
                     title: 'Because market research is part of the business plan',
                     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    person: 'Andrea Miller',
+                    person: 'John Layer',
                     hour: '2 Days Ago'
                 },
                 {
                     image: 'news-3',
                     title: 'Working from home is now a trend',
                     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    person: 'Andrea Miller',
+                    person: 'Lucy May',
                     hour: '2 Days Ago'
                 }
             ]
@@ -45,8 +45,11 @@ export default {
                             <span><i class="fa-regular fa-user"></i> {{ card.person }}</span>
                             <span><i class="fa-regular fa-clock"></i> {{ card.hour }}</span>
                         </div>
-                        <h2>{{ card.title }}</h2>
-                        <p>{{ card.description }}</p>
+                        <div class="text">
+                            <h2>{{ card.title }}</h2>
+                            <p>{{ card.description }}</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -62,6 +65,29 @@ export default {
     background-size: cover;
     height: 360px;
     border-radius: 15px;
+
+    &:hover {
+        .effects {
+            backdrop-filter: blur(2px);
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: space-between;
+
+            .details {
+                display: flex;
+                justify-content: space-around;
+                color: $white_color;
+
+                span {
+                    display: inline-block;
+                }
+            }
+
+            p {
+                display: block;
+            }
+        }
+    }
+
     .effects {
         border-radius: 15px;
         background-color: rgba(0, 0, 0, 0.5);
@@ -72,18 +98,23 @@ export default {
         flex-direction: column;
         justify-content: end;
         text-align: center;
+
         h2 {
             color: $white_color;
             font-size: 1.5rem;
             font-weight: 700;
         }
+
         p {
             color: $white_color;
             display: none;
         }
     }
+
     .details {
         display: none;
+        i {
+            margin-right: .3em;
+        }
     }
-}
-</style>
+}</style>
