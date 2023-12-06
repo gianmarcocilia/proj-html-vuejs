@@ -74,7 +74,8 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="hero" :style="{ 'background-image': 'url(' + getImagePath(bgImg[bgImgActive].img) + ')' }">
+        <div class="hero">
+            <img v-for="(image, index) in bgImg" :key="index" :src="getImagePath(image.img)" alt="" :class="index !== bgImgActive ? 'd-none' : ''">
             <div class="over-img">
                 <div class="container">
                     <nav>
@@ -130,9 +131,17 @@ header {
         height: $hero_heigth;
         position: relative;
 
+        img {
+            width: 100%;
+            height: $hero_heigth;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
         .over-img {
             background-color: rgba(0, 0, 0, 0.3);
-            height: 100%;
+            height: 100%; 
         }
 
         nav {
