@@ -5,7 +5,7 @@ export default {
     },
     data() {
         return {
-            
+
         }
     }
 }
@@ -52,6 +52,28 @@ section {
             right: 10%;
             font-size: 30px;
             color: $secondary_text_color;
+            cursor: pointer;
+        }
+
+        &:hover {
+            h3 {
+                color: $white_color;
+            }
+
+            p {
+                color: $white_color;
+            }
+
+            &::after {
+                color: $white_color;
+                background-color: $secondary_text_color;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 

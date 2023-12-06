@@ -31,5 +31,9 @@ a {
         background-color: transparent;
         border: 1px solid $primary_bg_color;
     }
+    &:hover {
+        background-color: $primary_bg_color;
+        filter: brightness(110%);
+    }
 }
 </style>
